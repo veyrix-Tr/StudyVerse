@@ -95,7 +95,7 @@ export default function Community() {
                   href={platform.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-green-600/70 to-green-700/10 text-white font-semibold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/25"
                 >
                   {platform.buttonText}
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -110,14 +110,14 @@ export default function Community() {
 
         {/* Stats Section */}
         <div className="scroll-reveal mt-10">
-          <div className="p-6 rounded-3xl border border-gray-800 bg-gradient-to-br from-blue-900/20 to-purple-900/20 backdrop-blur-sm transform scale-95">
+          <div className="p-6 rounded-3xl border border-gray-800 bg-gradient-to-br from-blue-900/20 to-indigo-900/20 backdrop-blur-sm transform scale-95">
             <div className="grid md:grid-cols-4 gap-6 text-center">
               <div>
                 <div className="text-2xl font-bold text-blue-400 mb-2">50K+</div>
                 <div className="text-gray-400 text-xs">Active Students</div>
               </div>
               <div>
-                <div className="text-2xl font-bold text-purple-400 mb-2">1000+</div>
+                <div className="text-2xl font-bold text-indigo-400 mb-2">1000+</div>
                 <div className="text-gray-400 text-xs">Daily Questions</div>
               </div>
               <div>

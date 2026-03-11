@@ -15,7 +15,7 @@ export default function About() {
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
               About <span className="text-[#60A5FA]">Studyverse</span>
             </h1>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto rounded-full"></div>
           </div>
 
           {/* Content */}
@@ -35,7 +35,7 @@ export default function About() {
               </p>
             </div>
 
-            <div className="p-8 rounded-2xl border border-gray-800 bg-gradient-to-br from-blue-900/20 to-purple-900/20 backdrop-blur-sm">
+            <div className="p-8 rounded-2xl border border-gray-800 bg-gradient-to-br from-blue-900/20 to-indigo-900/20 backdrop-blur-sm">
               <p className="text-white text-xl font-semibold text-center mb-4">
                 Studyverse was created to change that.
               </p>

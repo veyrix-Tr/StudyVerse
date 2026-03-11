@@ -44,7 +44,7 @@ export default function Testimonials() {
           {/* Heading */}
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-yellow-500 mb-6">
-              What Students Say
+              What Students Say...
             </h2>
 
             <p className="text-lg text-gray-300 leading-relaxed">
@@ -124,7 +124,7 @@ export default function Testimonials() {
               <div className="p-8 rounded-2xl bg-gray-900/60 backdrop-blur-xl border border-gray-800/60 hover:border-cyan-500/40 hover:bg-yellow-500/10 transition-all duration-300">
 
                 <div className="flex items-center gap-4 mb-5">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white font-bold">
                     RD
                   </div>
 
@@ -149,7 +149,7 @@ export default function Testimonials() {
               <div className="p-8 rounded-2xl bg-gray-900/60 backdrop-blur-xl border border-gray-800/60 hover:border-cyan-500/40 hover:bg-yellow-500/10 transition-all duration-300">
 
                 <div className="flex items-center gap-4 mb-5">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center text-white font-bold">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center text-white font-bold">
                     NK
                   </div>
 

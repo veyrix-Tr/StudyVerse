@@ -62,8 +62,8 @@ export default function Courses() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
         </svg>
       ),
-      iconBg: "from-purple-500 to-indigo-600",
-      hoverBgColor: "rgba(139,92,246,0.2)",
+      iconBg: "from-indigo-500 to-blue-600",
+      hoverBgColor: "rgba(99,102,241,0.2)",
       title: "School Exams Foundation",
       description:
         "Build strong academic foundations through conceptual learning and disciplined study habits.",

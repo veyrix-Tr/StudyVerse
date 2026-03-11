@@ -44,7 +44,7 @@ export default function Hero() {
             A strategic rejection of the ‘Coaching Factory.’ We provide human-centric mentorship for JEE & NEET that prioritizes grit and conceptual clarity over rote memorization.
           </p>
 
-          <p className="text-sm text-gray-500 mt-2">
+          <p className="text-sm text-gray-400 mt-2">
             The Human-Centric Gurukul for JEE & NEET Aspirants.
           </p>
 
