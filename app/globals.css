@@ -502,13 +502,12 @@ body {
 .nav-link {
   position: relative;
   padding: 0.5rem 1.25rem;
-  color: #d1d5db;
-  font-size: 0.875rem;
+  color: #efd981;
   font-weight: 500;
-  border-radius: 9999px;
   border: 2px solid transparent;
-  transition: all 0.3s ease;
+  border-radius: 0.7rem;
   background: transparent;
+  transition: all 0.3s ease;
 }
 
 .nav-link:hover {
@@ -519,9 +518,9 @@ body {
 }
 
 .nav-link.active {
-  color: white;
-  font-weight: 600;
-  border-color: #a855f7;
+  color: white !important;
+  font-weight: 600 !important;
+  border-color: #a855f7 !important;
   background: rgba(168, 85, 247, 0.1);
   box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
 }

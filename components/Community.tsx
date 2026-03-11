@@ -65,14 +65,14 @@ export default function Community() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-5 mx-5">
           {communityPlatforms.map((platform, index) => (
             <div 
               key={index} 
               className="scroll-reveal group"
               style={{ transitionDelay: `${index * 200}ms` }}
             >
-              <div className={`p-8 rounded-3xl border border-gray-800 bg-gray-900/50 backdrop-blur-sm transition-all duration-500 ${platform.hoverColor} hover:scale-[0.97] hover:shadow-lg transform scale-95`}>
+              <div className={`p-7 rounded-3xl border border-gray-800 bg-gray-900/50 backdrop-blur-sm transition-all duration-500 ${platform.hoverColor} hover:scale-[0.93] hover:shadow-lg transform scale-85`}>
                 
                 {/* Icon */}
                 <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${platform.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
@@ -109,7 +109,7 @@ export default function Community() {
         </div>
 
         {/* Stats Section */}
-        <div className="scroll-reveal mt-16">
+        <div className="scroll-reveal mt-10">
           <div className="p-6 rounded-3xl border border-gray-800 bg-gradient-to-br from-blue-900/20 to-purple-900/20 backdrop-blur-sm transform scale-95">
             <div className="grid md:grid-cols-4 gap-6 text-center">
               <div>

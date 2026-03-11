@@ -163,7 +163,7 @@ export default function ContactForm() {
                       onChange={handleInputChange}
                       required
                       className="flex-1 px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all duration-300"
-                      placeholder="98765 43210"
+                      placeholder="XXXXX-XXXXX"
                     />
                   </div>
                 </div>
@@ -180,7 +180,7 @@ export default function ContactForm() {
                     value={formData.message}
                     onChange={handleInputChange}
                     required
-                    placeholder="Tell us about your goals or questions..."
+                    placeholder="Tell us about your questions..."
                     className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 resize-none"
                   />
                 </div>

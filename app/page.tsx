@@ -12,11 +12,17 @@ export default function Home() {
     <>
       <Navbar />
       <main className="w-full min-h-screen">
-        <Hero />
-        <HowItWorks />
-        <Community />
-        <CTA />
-        <ContactForm />
+        <section id="home">
+          <Hero />
+          <HowItWorks />
+        </section>
+        <section id="testimonials">
+          <CTA />
+        </section>
+        <section id="community">
+          <Community />
+          <ContactForm />
+        </section>
         <Footer />
       </main>
     </>
