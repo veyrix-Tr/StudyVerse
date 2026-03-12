@@ -134,7 +134,7 @@ export default function Navbar() {
 
             <a
               href="/courses"
-              className={`nav-link ${activeSection === "courses" ? "active" : ""}`}
+              className={`nav-link ${pathname === "/courses" ? "active" : ""}`}
             >
               Courses
             </a>
@@ -192,7 +192,7 @@ export default function Navbar() {
 
             <div className="w-full h-px bg-gray-600 my-2"></div>
             
-            <a href="/courses" className="nav-link block">
+            <a href="/courses" className={`nav-link block ${pathname === "/courses" ? "active" : ""}`}>
               Courses
             </a>
 

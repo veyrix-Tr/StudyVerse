@@ -21,7 +21,9 @@ export default function Home() {
         </section>
         <section id="community">
           <Community />
-          <ContactForm />
+          <section id="contact">
+            <ContactForm />
+          </section>
         </section>
         <Footer />
       </main>
