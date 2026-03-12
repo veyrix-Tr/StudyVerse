@@ -49,46 +49,34 @@ export default function Footer() {
 
               {/* Instagram */}
               <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors"
+                href="https://instagram.com/studyverse"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors flex items-center justify-center w-10 h-10 rounded-full border border-gray-700 hover:border-gray-500"
               >
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07
-                  3.252.148 4.771 1.691 4.919 4.919
-                  .058 1.265.069 1.645.069 4.849
-                  0 3.205-.012 3.584-.069 4.849
-                  -.149 3.225-1.664 4.771-4.919 4.919
-                  -1.266.058-1.644.07-4.85.07
-                  -3.204 0-3.584-.012-4.849-.07
-                  -3.26-.149-4.771-1.699-4.919-4.92
-                  -.058-1.265-.07-1.644-.07-4.849
-                  0-3.204.013-3.583.07-4.849
-                  .149-3.227 1.664-4.771 4.919-4.919
-                  1.266-.057 1.645-.069 4.849-.069z" />
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0 2.163c-3.259 0-3.667.014-4.947.072-1.688.072-2.59.771-2.659 2.659-.058 1.28-.072 1.689-.072 4.948 0 3.259.014 3.668.072 4.948.069 1.887.971 2.586 2.659 2.659 1.28.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 1.887-.069 2.586-.971 2.659-2.659.058-1.28.072-1.689.072-4.948 0-3.259-.014-3.667-.072-4.947-.069-1.888-.971-2.587-2.659-2.66-1.28-.058-1.689-.072-4.948-.072zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.405a1.44 1.44 0 112.881.001 1.44 1.44 0 01-2.881-.001z"/>
                 </svg>
               </a>
 
               {/* LinkedIn */}
               <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors"
+                href="https://linkedin.com/company/studyverse"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors flex items-center justify-center w-10 h-10 rounded-full border border-gray-700 hover:border-gray-500"
               >
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.447 20.452h-3.554v-5.569
-                  c0-1.328-.027-3.037-1.852-3.037
-                  -1.853 0-2.136 1.445-2.136 2.939v5.667
-                  H9.351V9h3.414v1.561h.046
-                  c.477-.9 1.637-1.85 3.37-1.85
-                  3.601 0 4.267 2.37 4.267 5.455v6.286z"/>
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                 </svg>
               </a>
 
               {/* Email */}
               <a
                 href="mailto:hello@studyverse.com"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-400 hover:text-white transition-colors flex items-center justify-center w-10 h-10 rounded-full border border-gray-700 hover:border-gray-500"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7
                     a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
@@ -103,7 +91,7 @@ export default function Footer() {
             <h4 className="text-white font-semibold mb-4">Explore</h4>
             <ul className="space-y-2">
               <li><a href="/" className="text-gray-400 hover:text-white">Home</a></li>
-              <li><a href="/#offers" className="text-gray-400 hover:text-white">What We Offer</a></li>
+              <li><a href="/#how-it-works" className="text-gray-400 hover:text-white">What We Offer</a></li>
               <li><a href="/#testimonials" className="text-gray-400 hover:text-white">Testimonials</a></li>
               <li><a href="/#community" className="text-gray-400 hover:text-white">Community</a></li>
               <li><a href="/courses" className="text-gray-400 hover:text-white">Courses</a></li>

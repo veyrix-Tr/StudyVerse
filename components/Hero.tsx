@@ -49,7 +49,7 @@ export default function Hero() {
           </p>
 
           <div className="button-group">
-            <button onClick={handleExploreCourses} className="primary-button">
+            <a href="/courses" className="primary-button">
               <span className="button-glow"></span>
               <span className="button-bg"></span>
               <span className="button-text">
@@ -58,10 +58,10 @@ export default function Hero() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </span>
-            </button>
+            </a>
 
-            <a href="#how-it-works" onClick={handleLearnMethodology} className="secondary-button">
-              Our Methodology
+            <a href="/about" className="secondary-button">
+              Know About Us
             </a>
           </div>
         </div>
