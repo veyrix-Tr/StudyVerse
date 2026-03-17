@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #74ebd5, #223590);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .form-container {
+      background-color: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      width: 500px;
+    }
+
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #555;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+      transition: border-color 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+    </style>
+
+</head>
+
+<body>
+
+  <div class="form-container">
+    <h2>Contact Us</h2>
+    <form action="" method="post" name="contact-form">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="Name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" name="Email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="text" name="Phone" required />
+      </div>
+
+      <div class="form-group">
+        <label for="comment">Comment</label>
+        <textarea name="Comment" required></textarea>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+</body>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbweB8I2uT8I4JxsY4JjZ6j-F5J_HIacCKTAQFW_GtLSHSdSKTVvRDpjX5lfFbRO84-t/exec'
+
+  const form = document.forms['contact-form']
+
+  form.addEventListener('submit', e => {
+    
+    e.preventDefault()
+    
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => alert("Your form has been successfully submitted. We truly appreciate your interest and will be in touch with you shortly." ))
+    .then(() => { window.location.reload(); })
+    .catch(error => error('Error!', error.message))
+  })
+</script>
+</html>

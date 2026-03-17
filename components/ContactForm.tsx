@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import toast from 'react-hot-toast';
 
 export default function ContactForm() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -15,7 +16,7 @@ export default function ContactForm() {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-
+  
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -49,18 +50,47 @@ export default function ContactForm() {
 
     setIsSubmitting(true);
 
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    // Show loading toast
+    const loadingToast = toast.loading('Submitting your message...');
 
-    setFormData({
-      name: "",
-      city: "",
-      email: "",
-      mobile: "",
-      country: "+91",
-      message: "",
-    });
+    try {
+      // Create FormData object to match your Google Apps Script
+      const formDataToSend = new FormData();
+      formDataToSend.append('Name', formData.name);
+      formDataToSend.append('City', formData.city);
+      formDataToSend.append('Email', formData.email);
+      formDataToSend.append('Mobile', `${formData.country} ${formData.mobile}`);
+      formDataToSend.append('Country', formData.country);
+      formDataToSend.append('Message', formData.message);
 
-    setIsSubmitting(false);
+      // Submit to Google Apps Script
+      const response = await fetch(process.env.NEXT_PUBLIC_GOOGLE_SHEETS_URL || 'https://script.google.com/macros/s/YOUR_SCRIPT_ID_HERE/exec', {
+        method: 'POST',
+        body: formDataToSend,
+      });
+
+      if (response.ok) {
+        // Reset form
+        setFormData({
+          name: "",
+          city: "",
+          email: "",
+          mobile: "",
+          country: "+91",
+          message: "",
+        });
+        
+        // Show success message
+        toast.success('Your form has been successfully submitted. We truly appreciate your interest and will be in touch with you shortly.', { id: loadingToast });
+      } else {
+        throw new Error('Failed to submit form');
+      }
+    } catch (error) {
+      toast.error('Error! Failed to submit form. Please try again.', { id: loadingToast });
+      console.error('Form submission error:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
