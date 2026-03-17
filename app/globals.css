@@ -423,7 +423,14 @@ body {
   background: linear-gradient(to right, #4f46e5, #4338ca, #3730a3);
   border-radius: 9999px;
 }
-
+.button-bg-2 {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to right, #19ab19, #0fbd0f, #05ac05);
+  border-radius: 9999px;
+}
 .button-text {
   position: relative;
   display: flex;

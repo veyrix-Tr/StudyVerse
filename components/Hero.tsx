@@ -51,17 +51,23 @@ export default function Hero() {
           <div className="button-group">
             <a href="/courses" className="primary-button">
               <span className="button-glow"></span>
-              <span className="button-bg"></span>
+              <span className="button-bg-2"></span>
               <span className="button-text">
                 Explore Courses
+              </span>
+              
+            </a>
+
+            <a href="https://studyverseacademy.testpress.in/" target="_blank" rel="noopener noreferrer" className="primary-button">
+              <span className="button-glow"></span>
+              <span className="button-bg"></span>
+              <span className="button-text">
+                Get started
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </span>
-            </a>
-
-            <a href="/about" className="secondary-button">
-              Know About Us
+              
             </a>
           </div>
         </div>

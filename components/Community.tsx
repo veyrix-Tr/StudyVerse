@@ -35,7 +35,7 @@ export default function Community() {
       ),
       color: "from-blue-500 to-cyan-600",
       hoverColor: "hover:border-blue-500/60",
-      link: "https://t.me/studyverse"
+      link: process.env.NEXT_PUBLIC_TELEGRAM_URL || "https://t.me/studyverse"
     },
     {
       title: "Master Studies with Our YouTube Channel",
@@ -48,7 +48,7 @@ export default function Community() {
       ),
       color: "from-red-500 to-pink-600",
       hoverColor: "hover:border-red-500/60",
-      link: "https://youtube.com/@studyverse"
+      link: process.env.NEXT_PUBLIC_YOUTUBE_URL || "https://youtube.com/@studyverse"
     }
   ];
 

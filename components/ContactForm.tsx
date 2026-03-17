@@ -16,7 +16,22 @@ export default function ContactForm() {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
+  const [submitMessage, setSubmitMessage] = useState("");
+  const [timeLeft, setTimeLeft] = useState<number | null>(null);
+
+  // Check rate limit on component mount
+  useEffect(() => {
+    const lastSubmission = localStorage.getItem('lastFormSubmission');
+    if (lastSubmission) {
+      const timeDiff = Date.now() - parseInt(lastSubmission);
+      const timeLeft = 7200000 - timeDiff; // 2 hours in milliseconds
+      
+      if (timeLeft > 0) {
+        setTimeLeft(Math.ceil(timeLeft / 60000)); // Convert to minutes
+      }
+    }
+  }, []);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -48,8 +63,19 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    setIsSubmitting(true);
+    // Check rate limit
+    const lastSubmission = localStorage.getItem('lastFormSubmission');
+    if (lastSubmission) {
+      const timeDiff = Date.now() - parseInt(lastSubmission);
+      if (timeDiff < 7200000) { // 2 hours
+        const timeLeft = Math.ceil((7200000 - timeDiff) / 60000);
+        setSubmitMessage(`Please wait ${timeLeft} minutes before submitting again.`);
+        return;
+      }
+    }
 
+    setIsSubmitting(true);
+    setSubmitMessage("");
     // Show loading toast
     const loadingToast = toast.loading('Submitting your message...');
 
@@ -70,7 +96,10 @@ export default function ContactForm() {
       });
 
       if (response.ok) {
-        // Reset form
+        // Save submission time
+        localStorage.setItem('lastFormSubmission', Date.now().toString());
+
+        setSubmitMessage("Message sent successfully! We'll get back to you soon.");
         setFormData({
           name: "",
           city: "",

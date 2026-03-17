@@ -258,7 +258,15 @@ export default function Courses() {
                   {/* CTA - Push to bottom */}
                   <div className="mt-auto pt-3 border-t border-gray-800">
                     <div className="flex items-center justify-between">
-                      <span className="text-cyan-400 text-xs font-medium">View Details →</span>
+                      <a
+                        href={`https://studyverseacademy.testpress.in/courses/`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-sm font-semibold rounded-full hover:scale-105 transition-all duration-200 hover:shadow-lg hover:shadow-cyan-500/25"
+                      >
+                        Enroll Now
+                      </a>
                       <div className="flex items-center gap-1">
                         <span className="text-gray-500 text-xs">Learn More</span>
                         <svg className="w-3 h-3 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">

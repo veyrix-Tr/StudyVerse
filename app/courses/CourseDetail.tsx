@@ -227,7 +227,7 @@ export default function CourseDetail({ course }: CourseDetailProps) {
                   <p className="text-gray-500 text-sm">Transform your learning journey today.</p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-                  <a href="#contact" className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-green-600 to-emerald-800 text-white font-semibold rounded-xl text-lg hover:scale-105 hover:shadow-lg hover:shadow-green-500/25 transition-all duration-300">
+                  <a href="https://studyverseacademy.testpress.in/courses" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-green-600 to-emerald-800 text-white font-semibold rounded-xl text-lg hover:scale-105 hover:shadow-lg hover:shadow-green-500/25 transition-all duration-300">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
