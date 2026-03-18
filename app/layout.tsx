@@ -5,6 +5,7 @@ import { Toaster } from 'react-hot-toast';
 export const metadata: Metadata = {
   title: "Studyverse - Career Guidance Platform",
   description: "Studyverse: Bridging the gap between education and career success with AI-powered guidance",
+  viewport: "width=device-width, initial-scale=1",
   icons: {
     icon: "/logo.png",
     shortcut: "/logo.png",

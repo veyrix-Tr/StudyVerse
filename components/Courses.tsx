@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Courses() {
   const sectionRef = useRef<HTMLElement>(null);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const router = useRouter();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -148,59 +150,59 @@ export default function Courses() {
   ];
 
   return (
-    <section ref={sectionRef} id="courses" className="relative py-24 px-4 bg-black">
+    <section ref={sectionRef} id="courses" className="relative py-16 sm:py-20 lg:py-24 px-4 bg-black">
       <div className="max-w-5xl mx-auto">
 
-        <div className="text-center mb-16 space-y-4">
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 via-teal-400 to-blue-400 bg-clip-text text-transparent">
+        <div className="text-center mb-12 sm:mb-16 space-y-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 via-teal-400 to-blue-400 bg-clip-text text-transparent">
             Our Courses
           </h2>
-          <p className="text-lg text-gray-400 max-w-xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-400 max-w-xl mx-auto">
             Mentorship-driven programs designed to build clarity, consistency,
             emotional stability, and academic excellence.
           </p>
         </div>
 
         {/* 2 x 2 Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           {courses.map((course, index) => {
             const isHovered = hoveredIndex === index;
 
             return (
-              <a
+              <div
                 key={index}
-                href={`/courses?courses=${course.id}`}
+                onClick={() => router.push(`/courses?courses=${course.id}`)}
                 className="course-card opacity-0 translate-y-10 cursor-pointer h-full"
                 style={{ transitionDelay: `${index * 120}ms` }}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
               >
                 <div
-                  className="p-6 rounded-3xl border border-gray-800 backdrop-blur-sm transition-all duration-500 h-full flex flex-col"
+                  className="p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-gray-800 backdrop-blur-sm transition-all duration-500 h-full flex flex-col"
                   style={{
                     backgroundColor: isHovered
                       ? course.hoverBgColor
                       : "rgba(17,24,39,0.5)",
-                    transform: isHovered ? "scale(1.04)" : "scale(1)",
+                    transform: isHovered ? "scale(1.02)" : "scale(1)",
                     borderColor: isHovered ? "#4b5563" : "#1f2937",
                   }}
                 >
                   <div
-                    className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${course.iconBg} flex items-center justify-center mb-4 text-white`}
+                    className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-gradient-to-br ${course.iconBg} flex items-center justify-center mb-3 sm:mb-4 text-white`}
                   >
                     {course.icon}
                   </div>
 
-                  <h3 className="text-xl font-bold text-white mb-2">
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2">
                     {course.title}
                   </h3>
 
-                  <p className="text-gray-400 text-sm mb-4">
+                  <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">
                     {course.description}
                   </p>
 
                   {/* Course Meta Info */}
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
                     <span className="px-2 py-1 bg-gray-800/50 text-gray-400 text-xs rounded-full">
                       {course.level}
                     </span>
@@ -216,11 +218,11 @@ export default function Courses() {
                   </div>
 
                   {/* Focus Areas */}
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
                     {course.focus.map((item, idx) => (
                       <span
                         key={idx}
-                        className="px-3 py-1 bg-gray-800 text-gray-400 text-xs rounded-full"
+                        className="px-2 sm:px-3 py-1 bg-gray-800 text-gray-400 text-xs rounded-full"
                       >
                         {item}
                       </span>
@@ -228,7 +230,7 @@ export default function Courses() {
                   </div>
 
                   {/* Highlights */}
-                  <div className="mb-4">
+                  <div className="mb-3 sm:mb-4">
                     <p className="text-gray-500 text-xs mb-2 font-medium">Key Highlights:</p>
                     <div className="space-y-1">
                       {course.highlights.slice(0, 2).map((highlight, idx) => (
@@ -241,7 +243,7 @@ export default function Courses() {
                   </div>
 
                   {/* Outcomes */}
-                  <div className="mb-4">
+                  <div className="mb-3 sm:mb-4">
                     <p className="text-gray-500 text-xs mb-2 font-medium">Learning Outcomes:</p>
                     <div className="space-y-1">
                       {course.outcomes.slice(0, 2).map((outcome, idx) => (
@@ -256,28 +258,28 @@ export default function Courses() {
                   </div>
 
                   {/* CTA - Push to bottom */}
-                  <div className="mt-auto pt-3 border-t border-gray-800">
-                    <div className="flex items-center justify-between">
-                      <a
-                        href={`https://studyverseacademy.testpress.in/courses/`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                        className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-sm font-semibold rounded-full hover:scale-105 transition-all duration-200 hover:shadow-lg hover:shadow-cyan-500/25"
-                      >
-                        Enroll Now
-                      </a>
+                  <div className="mt-auto pt-2 sm:pt-3 border-t border-gray-800">
+                    <div className="flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-0">
                       <div className="flex items-center gap-1">
                         <span className="text-gray-500 text-xs">Learn More</span>
                         <svg className="w-3 h-3 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
                       </div>
+                      <a
+                        href={`https://studyverseacademy.testpress.in/courses/`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-xs sm:text-sm font-semibold rounded-full hover:scale-105 transition-all duration-200 hover:shadow-lg hover:shadow-cyan-500/25 text-center"
+                      >
+                        Enroll Now
+                      </a>
                     </div>
                   </div>
 
                 </div>
-              </a>
+              </div>
             );
           })}
         </div>

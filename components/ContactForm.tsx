@@ -21,13 +21,16 @@ export default function ContactForm() {
 
   // Check rate limit on component mount
   useEffect(() => {
-    const lastSubmission = localStorage.getItem('lastFormSubmission');
-    if (lastSubmission) {
-      const timeDiff = Date.now() - parseInt(lastSubmission);
-      const timeLeft = 7200000 - timeDiff; // 2 hours in milliseconds
-      
-      if (timeLeft > 0) {
-        setTimeLeft(Math.ceil(timeLeft / 60000)); // Convert to minutes
+    // Only access localStorage on client side
+    if (typeof window !== 'undefined') {
+      const lastSubmission = localStorage.getItem('lastFormSubmission');
+      if (lastSubmission) {
+        const timeDiff = Date.now() - parseInt(lastSubmission);
+        const timeLeft = 7200000 - timeDiff; // 2 hours in milliseconds
+        
+        if (timeLeft > 0) {
+          setTimeLeft(Math.ceil(timeLeft / 60000)); // Convert to minutes
+        }
       }
     }
   }, []);
@@ -64,13 +67,15 @@ export default function ContactForm() {
     e.preventDefault();
 
     // Check rate limit
-    const lastSubmission = localStorage.getItem('lastFormSubmission');
-    if (lastSubmission) {
-      const timeDiff = Date.now() - parseInt(lastSubmission);
-      if (timeDiff < 7200000) { // 2 hours
-        const timeLeft = Math.ceil((7200000 - timeDiff) / 60000);
-        setSubmitMessage(`Please wait ${timeLeft} minutes before submitting again.`);
-        return;
+    if (typeof window !== 'undefined') {
+      const lastSubmission = localStorage.getItem('lastFormSubmission');
+      if (lastSubmission) {
+        const timeDiff = Date.now() - parseInt(lastSubmission);
+        if (timeDiff < 7200000) { // 2 hours
+          const timeLeft = Math.ceil((7200000 - timeDiff) / 60000);
+          setSubmitMessage(`Please wait ${timeLeft} minutes before submitting again.`);
+          return;
+        }
       }
     }
 
@@ -97,7 +102,9 @@ export default function ContactForm() {
 
       if (response.ok) {
         // Save submission time
-        localStorage.setItem('lastFormSubmission', Date.now().toString());
+        if (typeof window !== 'undefined') {
+          localStorage.setItem('lastFormSubmission', Date.now().toString());
+        }
 
         setSubmitMessage("Message sent successfully! We'll get back to you soon.");
         setFormData({
@@ -123,27 +130,27 @@ export default function ContactForm() {
   };
 
   return (
-    <section ref={sectionRef} className="relative py-24 px-4 bg-black">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16 space-y-4 scroll-reveal">
-          <h2 className="text-4xl md:text-5xl font-bold">
+    <section ref={sectionRef} className="relative py-16 sm:py-20 lg:py-24 px-4 bg-black">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-12 sm:mb-16 space-y-4 scroll-reveal">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
             <span className="text-[#60A5FA]">Still Confused? </span>
-            <span className="text-[#3B82F6]">We’re Here to Help</span>
+            <span className="text-[#3B82F6]">We're Here to Help</span>
           </h2>
 
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-400 max-w-3xl mx-auto">
             Have questions about our programs? Want to know how StudyVerse can
             help you achieve your JEE/NEET goals? Reach out to us and we'll get
             back to you soon.
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-3xl sm:max-w-4xl mx-auto">
           <form onSubmit={handleSubmit} className="scroll-reveal">
-            <div className="p-8 rounded-3xl border border-gray-800 bg-gray-900/50 backdrop-blur-sm">
+            <div className="p-4 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl border border-gray-800 bg-gray-900/50 backdrop-blur-sm">
               
               {/* GRID FORM */}
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-6">
 
                 {/* Name */}
                 <div>
@@ -158,7 +165,7 @@ export default function ContactForm() {
                     onChange={handleInputChange}
                     required
                     placeholder="Your full name"
-                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+                    className="w-full px-3 sm:px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 text-sm sm:text-base"
                   />
                 </div>
 
@@ -175,7 +182,7 @@ export default function ContactForm() {
                     onChange={handleInputChange}
                     required
                     placeholder="Your city"
-                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+                    className="w-full px-3 sm:px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 text-sm sm:text-base"
                   />
                 </div>
 
@@ -192,7 +199,7 @@ export default function ContactForm() {
                     onChange={handleInputChange}
                     required
                     placeholder="your.email@example.com"
-                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+                    className="w-full px-3 sm:px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 text-sm sm:text-base"
                   />
                 </div>
 
@@ -201,12 +208,12 @@ export default function ContactForm() {
                   <label className="block text-sm font-medium text-gray-300 mb-2">
                     Mobile No.
                   </label>
-                  <div className="flex gap-2">
+                  <div className="flex gap-1.5 sm:gap-2">
                     <select
                       name="country"
                       value={formData.country}
                       onChange={handleInputChange}
-                      className="px-3 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all duration-300"
+                      className="w-16 sm:w-20 px-1.5 sm:px-2 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 text-xs sm:text-sm flex-shrink-0"
                     >
                       <option value="+91">+91</option>
                       <option value="+1">+1</option>
@@ -221,7 +228,7 @@ export default function ContactForm() {
                       value={formData.mobile}
                       onChange={handleInputChange}
                       required
-                      className="flex-1 px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all duration-300"
+                      className="min-w-0 flex-1 px-2 sm:px-3 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 text-sm sm:text-base"
                       placeholder="XXXXX-XXXXX"
                     />
                   </div>
@@ -240,17 +247,17 @@ export default function ContactForm() {
                     onChange={handleInputChange}
                     required
                     placeholder="Tell us about your questions..."
-                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 resize-none"
+                    className="w-full px-3 sm:px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 resize-none text-sm sm:text-base"
                   />
                 </div>
               </div>
 
               {/* Submit */}
-              <div className="mt-8 flex justify-center">
+              <div className="mt-4 sm:mt-6 lg:mt-8 flex justify-center">
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-4/5 py-4 px-6 bg-gradient-to-r from-green-600 to-emerald-800 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-green-500/25 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                  className="w-full max-w-xs sm:max-w-md lg:w-4/5 py-3 sm:py-4 px-4 sm:px-6 bg-gradient-to-r from-green-600 to-emerald-800 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-green-500/25 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 text-sm sm:text-base"
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </button>

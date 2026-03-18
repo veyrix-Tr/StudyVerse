@@ -53,40 +53,40 @@ export default function Community() {
   ];
 
   return (
-    <section ref={sectionRef} className="relative py-24 px-4 bg-black">
+    <section ref={sectionRef} className="relative py-16 sm:py-20 lg:py-24 px-4 bg-black">
       <div className="max-w-6xl mx-auto">
         
-        <div className="flex flex-col items-center justify-center text-center mb-16 space-y-4 scroll-reveal">
-          <h2 className="text-4xl md:text-5xl font-bold whitespace-nowrap overflow-visible">
+        <div className="flex flex-col items-center justify-center text-center mb-12 sm:mb-16 space-y-4 scroll-reveal">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
             <span className="text-gray-200">Join Our </span><span className="gradient-text">Learning Community</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl">
+          <p className="text-lg sm:text-xl text-gray-400 max-w-3xl">
             Connect with thousands of JEE & NEET aspirants. Get daily content, practice questions, and expert mentorship — completely free.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-5 mx-5">
+        <div className="grid md:grid-cols-2 gap-4 sm:gap-5 px-0">
           {communityPlatforms.map((platform, index) => (
             <div 
               key={index} 
               className="scroll-reveal group"
               style={{ transitionDelay: `${index * 200}ms` }}
             >
-              <div className={`p-7 rounded-3xl border border-gray-800 bg-gray-900/50 backdrop-blur-sm transition-all duration-500 ${platform.hoverColor} hover:scale-[0.93] hover:shadow-lg transform scale-85`}>
+              <div className={`p-5 sm:p-7 rounded-3xl border border-gray-800 bg-gray-900/50 backdrop-blur-sm transition-all duration-500 ${platform.hoverColor} hover:scale-[0.95] hover:shadow-lg`}>
                 
                 {/* Icon */}
-                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${platform.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br ${platform.color} flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-105 transition-transform duration-300`}>
                   <div className="text-white">
                     {platform.icon}
                   </div>
                 </div>
                 
                 {/* Content */}
-                <h3 className="text-2xl font-bold text-white mb-4">
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">
                   {platform.title}
                 </h3>
                 
-                <p className="text-gray-400 leading-relaxed mb-6">
+                <p className="text-gray-400 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
                   {platform.description}
                 </p>
                 
@@ -95,10 +95,10 @@ export default function Community() {
                   href={platform.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-green-600/70 to-green-700/10 text-white font-semibold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/25"
+                  className="inline-flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-green-600/70 to-green-700/10 text-white font-semibold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/25 text-sm sm:text-base"
                 >
                   {platform.buttonText}
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </a>
@@ -109,24 +109,24 @@ export default function Community() {
         </div>
 
         {/* Stats Section */}
-        <div className="scroll-reveal mt-10">
-          <div className="p-6 rounded-3xl border border-gray-800 bg-gradient-to-br from-blue-900/20 to-indigo-900/20 backdrop-blur-sm transform scale-95">
-            <div className="grid md:grid-cols-4 gap-6 text-center">
+        <div className="scroll-reveal mt-8 sm:mt-10">
+          <div className="p-4 sm:p-6 rounded-3xl border border-gray-800 bg-gradient-to-br from-blue-900/20 to-indigo-900/20 backdrop-blur-sm">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center">
               <div>
-                <div className="text-2xl font-bold text-blue-400 mb-2">50K+</div>
-                <div className="text-gray-400 text-xs">Active Students</div>
+                <div className="text-xl sm:text-2xl font-bold text-blue-400 mb-2">50K+</div>
+                <div className="text-gray-400 text-xs sm:text-sm">Active Students</div>
               </div>
               <div>
-                <div className="text-2xl font-bold text-indigo-400 mb-2">1000+</div>
-                <div className="text-gray-400 text-xs">Daily Questions</div>
+                <div className="text-xl sm:text-2xl font-bold text-indigo-400 mb-2">1000+</div>
+                <div className="text-gray-400 text-xs sm:text-sm">Daily Questions</div>
               </div>
               <div>
-                <div className="text-2xl font-bold text-green-400 mb-2">500+</div>
-                <div className="text-gray-400 text-xs">Strategy Videos</div>
+                <div className="text-xl sm:text-2xl font-bold text-green-400 mb-2">500+</div>
+                <div className="text-gray-400 text-xs sm:text-sm">Strategy Videos</div>
               </div>
               <div>
-                <div className="text-2xl font-bold text-orange-400 mb-2">24/7</div>
-                <div className="text-gray-400 text-xs">Mentor Support</div>
+                <div className="text-xl sm:text-2xl font-bold text-orange-400 mb-2">24/7</div>
+                <div className="text-gray-400 text-xs sm:text-sm">Mentor Support</div>
               </div>
             </div>
           </div>

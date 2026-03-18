@@ -326,16 +326,25 @@ body {
   animation: fadeIn 1s ease-in;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .content-wrapper {
+    gap: 2rem;
+  }
 }
 
 .hero-title {
-  font-size: 2.5rem;
+  font-size: 1.75rem;
   font-weight: bold;
   color: rgb(150, 227, 250);
   text-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
   line-height: 1.2;
   margin-top: 1rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .gradient-text {
@@ -343,9 +352,22 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  font-size: 2.25rem;
+  font-size: 1.5rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
+
+@media (min-width: 640px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .gradient-text {
+    font-size: 2.25rem;
+  }
+}
 
 @media (min-width: 768px) {
   .hero-title {
@@ -358,11 +380,19 @@ body {
 }
 
 .hero-description {
-  font-size: 1.125rem;
+  font-size: 1rem;
   color: #d1d5db;
   max-width: 48rem;
   margin: 0 auto;
   text-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+@media (min-width: 640px) {
+  .hero-description {
+    font-size: 1.125rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -388,11 +418,19 @@ body {
 
 .primary-button {
   position: relative;
-  padding: 0.75rem 2rem;
+  padding: 0.75rem 1.5rem;
   font-weight: 600;
   color: white;
   transition: all 0.3s ease-out;
   cursor: pointer;
+  font-size: 0.875rem;
+}
+
+@media (min-width: 640px) {
+  .primary-button {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+  }
 }
 
 .primary-button:hover {
@@ -428,7 +466,7 @@ body {
   inset: 0;
   height: 100%;
   width: 100%;
-  background: linear-gradient(to right, #19ab19, #0fbd0f, #05ac05);
+  background: linear-gradient(to right, #18af187a, #0fbd0f95, #05ac0592);
   border-radius: 9999px;
 }
 .button-text {

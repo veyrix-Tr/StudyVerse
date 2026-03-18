@@ -57,14 +57,14 @@ export default function WhatWeOffer() {
   ];
 
   return (
-    <section ref={sectionRef} id="what-we-offer" className="relative py-24 px-4 bg-black">
+    <section ref={sectionRef} id="what-we-offer" className="relative py-12 sm:py-16 lg:py-24 px-4 bg-black">
       <div className="max-w-6xl mx-auto">
 
-        <div className="text-center mb-16 space-y-4 scroll-reveal">
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-indigo-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+        <div className="text-center mb-12 sm:mb-16 space-y-4 scroll-reveal">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-indigo-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
             What We Offer
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto">
             A mentorship-driven learning ecosystem designed to build clarity,
             consistency, and long-term academic confidence.
           </p>
@@ -75,33 +75,34 @@ export default function WhatWeOffer() {
           {/* Connection Line */}
           <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-indigo-500/0 via-indigo-500 to-indigo-500/0"></div>
 
-          <div className="space-y-12">
+          <div className="space-y-8 sm:space-y-12">
             {offerings.map((item, index) => (
               <div
                 key={index}
-                className={`scroll-reveal relative flex flex-col lg:flex-row gap-8 items-center ${
+                className={`scroll-reveal relative flex flex-col lg:flex-row gap-6 sm:gap-8 items-center ${
                   index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
                 }`}
                 style={{ transitionDelay: `${index * 150}ms` }}
               >
                 {/* Content Card */}
                 <div className="flex-1 w-full">
-                  <div className="p-8 rounded-2xl bg-gray-900/80 border-2 border-indigo-500/30 hover:border-indigo-500/60 backdrop-blur-sm transition-all duration-300 hover:scale-[1.03] hover:shadow-lg hover:shadow-indigo-500/20">
+                  <div className="p-6 sm:p-8 rounded-2xl bg-gray-900/80 border-2 border-indigo-500/30 hover:border-indigo-500/60 backdrop-blur-sm transition-all duration-300 hover:scale-[1.03] hover:shadow-lg hover:shadow-indigo-500/20">
 
-                    <div className="flex items-start gap-4">
-                      <span className="text-5xl font-bold bg-gradient-to-r from-indigo-500 via-blue-500 to-cyan-500 bg-clip-text text-transparent">
+                    {/* Step Number at Top */}
+                    <div className="text-center mb-4">
+                      <span className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-indigo-500 via-blue-500 to-cyan-500 bg-clip-text text-transparent">
                         {item.step}
                       </span>
+                    </div>
 
-                      <div className="flex-1 max-w-lg">
-                        <h3 className="text-2xl font-bold text-white mb-2">
-                          {item.title}
-                        </h3>
+                    <div className="text-center sm:text-left">
+                      <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
+                        {item.title}
+                      </h3>
 
-                        <p className="text-gray-300 leading-relaxed">
-                          {item.description}
-                        </p>
-                      </div>
+                      <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
+                        {item.description}
+                      </p>
                     </div>
 
                   </div>
